@@ -18,4 +18,12 @@ const useStoreContext = () => {
     return useContext(StoreContext);
   };  
 
+const [state, dispatch] = useProductReducer({
+  products: [],
+  cart: [],
+  cartOpen: false,
+  categories: [],
+  currentCategory: ''
+});  
+
 export { StoreProvider, useStoreContext };

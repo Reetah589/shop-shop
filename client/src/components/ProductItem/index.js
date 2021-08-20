@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useStoreContext } from '../../utils/GlobalState';
+import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
 import { pluralize } from "../../utils/helpers"
 
 function ProductItem(item) {
@@ -28,5 +30,16 @@ function ProductItem(item) {
     </div>
   );
 }
+
+const [state, dispatch] = useStoreContext();
+
+const addToCart = () => {
+  dispatch({
+    type: ADD_TO_CART,
+    product: { ...item, purchaseQuantity: 1 }
+  });
+};
+
+<button onClick={addToCart}>Add to cart</button>
 
 export default ProductItem;
