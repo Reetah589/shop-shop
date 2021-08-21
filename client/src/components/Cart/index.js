@@ -47,4 +47,8 @@ function toggleCart() {
   dispatch({ type: TOGGLE_CART });
 }
 
+<div className="close" onClick={toggleCart}>[close]</div>
+
 export default Cart;
+
+

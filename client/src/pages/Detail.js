@@ -54,4 +54,11 @@ function Detail() {
   );
 }
 
+const addToCart = () => {
+  dispatch({
+    type: ADD_TO_CART,
+    product: { ...currentProduct, purchaseQuantity: 1 }
+  });
+};
+
 export default Detail;
